@@ -30,7 +30,7 @@ const App = () => {
       <h1>NBA teams - all star voting</h1>
       <Team />
       {appData.map((team, index) => (
-        <Team />
+        <Team team={team} key={index} name={team.name} />
       ))}
     </div>
   );
