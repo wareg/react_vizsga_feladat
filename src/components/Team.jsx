@@ -10,7 +10,7 @@ function Team(props) {
 
   return(
     <section>
-      <h3>{props.name}</h3>
+      <h3>{props.team.name}</h3>
       <button onClick={handleShowMore} >{showDetail ? "Show less" : "Show more"}</button>
       {showDetail ?
         props.team.franchisePlayers.map((item, index) => < Player player={item} key={index} /> )
@@ -18,7 +18,5 @@ function Team(props) {
       </section>
   )
 }
-
-{/* <pre>{JSON.stringify(props.team, null, 2)}</pre>  */}
 
 export default Team;

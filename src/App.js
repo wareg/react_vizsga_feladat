@@ -5,6 +5,7 @@ import Team from "./components/Team";
 const App = () => {
   const [appData, setAppData] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [searchValue, setSearchValue] = useState("");
 
   useEffect(() => {
     dataRead();
@@ -28,9 +29,9 @@ const App = () => {
   return (
     <div className="App">
       <h1>NBA teams - all star voting</h1>
-      <Team />
+      <input type="text" placeholder="search for teams" />
       {appData.map((item, index) => (
-        <Team team={item} key={index} name={item.name} />
+        <Team team={item} key={index} />
       ))}
     </div>
   );

@@ -2,6 +2,7 @@ import { useState } from "react";
 
 function Player(props) {
   const [loading, setLoading] = useState(false);
+  const [voted, setVoted] = useState(false);
 
   function handleVote(e) {
     setLoading(true);
@@ -14,18 +15,24 @@ function Player(props) {
     })
     .then(response => {
       response.json()
-      console.log("response");
       console.log(response);
-      console.log("OK:"+response.ok);
-      console.log("Status:"+response.status);
       setLoading(false);
+      setVoted(true);
+    })
+    .catch(error => {
+      console.log(error);
     })
   }
 
   return(
     <>
     <p>{props.player.name}</p>
-    <button onClick={handleVote}>Vote</button>
+    {!voted 
+      ?
+        <button onClick={handleVote}>Vote</button>
+      :
+        <p>voted</p>
+    }
     </>
   )
 }
