@@ -29,8 +29,8 @@ const App = () => {
     <div className="App">
       <h1>NBA teams - all star voting</h1>
       <Team />
-      {appData.map((team, index) => (
-        <Team team={team} key={index} name={team.name} />
+      {appData.map((item, index) => (
+        <Team team={item} key={index} name={item.name} />
       ))}
     </div>
   );

@@ -9,18 +9,16 @@ function Team(props) {
   }
 
   return(
-    <>
-    <h3>{props.name}</h3>
-    <button onClick={handleShowMore} >{showDetail ? "Show less" : "Show more"}</button>
-    {showDetail ?
-      props.franchisePlayers.map((item, index) => < Player /> )
-      : ""}
-    </>
+    <section>
+      <h3>{props.name}</h3>
+      <button onClick={handleShowMore} >{showDetail ? "Show less" : "Show more"}</button>
+      {showDetail ?
+        props.team.franchisePlayers.map((item, index) => < Player player={item} key={index} /> )
+        : ""}
+      </section>
   )
 }
 
 {/* <pre>{JSON.stringify(props.team, null, 2)}</pre>  */}
-  // !!! nem működött. miért ???
-  // <h3>{props.name}</h3>
 
 export default Team;
