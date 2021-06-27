@@ -1,4 +1,4 @@
-Vizsga Feladat:
+React Vizsga Feladat:
 - Adj címet az oldaladnak.
 - Indíts egy Api hívást az /api/teams oldalról.
 - A kapott kosárlabda csapatokat rendereld egy-egy Teams komponensbe.
